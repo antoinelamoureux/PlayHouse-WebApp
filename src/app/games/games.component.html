@@ -1,0 +1,17 @@
+<h3>Games List</h3>
+<div><a href="/game-create" routerLink="game-create">Add a game</a></div>
+<div *ngFor="let game of games">
+    <div><a href="/game-details" routerLink="game-details">{{ game.title }}</a></div>
+    <div>{{ game.description }}</div>
+    <div>{{ game.addDate }}</div>
+    <div>{{ game.releaseDate }}</div>
+    <div>{{ game.note.note }}</div>
+    <div>{{ game.category.name }}</div>
+    <div>{{ game.state.name }}</div>
+    <div>{{ game.classification.name }}</div>
+    <div>{{ game.tagsCollection[0].title }}</div>
+    <div>{{ game.platformCollection }}</div>
+    <div>{{ game.idDevelopper.name }}</div>
+    <div>{{ game.idEditor.name }}</div>
+    <hr>
+</div>

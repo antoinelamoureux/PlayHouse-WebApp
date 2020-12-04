@@ -1,0 +1,54 @@
+<h3>Add a game</h3>
+<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+<p>Title :</p>
+<p><input type="text" [(ngModel)]="currentGame.title" name="title"/></p>
+<p>Description :</p>
+<p><input type="textarea" [(ngModel)]="currentGame.description" name="description"/></p>
+<p>Cover :</p>
+<p><input type="text" [(ngModel)]="currentGame.cover" name="cover"/></p>
+<p>Add Date :</p>
+<p><input type="text" [(ngModel)]="currentGame.addDate" name="addDate"/></p>
+<p>Release Date :</p>
+<p><input type="text" [(ngModel)]="currentGame.releaseDate" name="releaseDate"/></p>
+<p>Price :</p>
+<p><input type="text" [(ngModel)]="currentGame.price" name="price"/></p>
+<p>Note :</p>
+<select [(ngModel)]="notes" name="notes">
+    <option *ngFor="let note of notes | keyvalue" [ngValue]="note">{{note.value.note}}</option>
+</select>
+<label>Category :</label>
+<ng-select [items]="categories"
+                   bindLabel="name"
+                   [(ngModel)]="currentCategory"
+                   [ngModelOptions]="{standalone: true}">
+        </ng-select>
+        <p>
+            Selected Category: {{currentCategory | json}}
+        </p>
+<!--
+<div [formGroup]="categoryForm">
+<select formControlName="categoryControl">
+    <option [ngValue]="category.name | async" *ngFor="let category of categories | async">{{category.name | async}}</option>
+</select>
+</div>
+-->
+<p>State :</p>
+<select [(ngModel)]="states" name="states">
+    <option *ngFor="let state of states | keyvalue" [ngValue]="state">{{state.value.name}}</option>
+</select>
+<p>Classification :</p>
+<select [(ngModel)]="classifications" name="classifications">
+    <option *ngFor="let classification of classifications | keyvalue" [ngValue]="classification">{{classification.value.name}}</option>
+</select>
+<p>Developper :</p>
+<select [(ngModel)]="developpers" name="developpers">
+    <option *ngFor="let developper of developpers | keyvalue" [ngValue]="developper">{{developper.value.name}}</option>
+</select>
+<p>Editor :</p>
+<select [(ngModel)]="editors" name="editors">
+    <option *ngFor="let editor of editors | keyvalue" [ngValue]="editor">{{editor.value.name}}</option>
+</select>
+<p>
+<button>Add Game</button>
+</p>
+</form>
