@@ -21,6 +21,6 @@ export class Game {
     classification: Classification;
     tagsCollection: Tag[];
     platformCollection: Platform[];
-    idDevelopper: Developper[];
-    idEditor: Editor[];
+    idDevelopper: Developper;
+    idEditor: Editor;
 }

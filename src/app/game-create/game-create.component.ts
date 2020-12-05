@@ -25,7 +25,6 @@ import {NgSelectModule, NgOption} from '@ng-select/ng-select';
 export class GameCreateComponent implements OnInit {
   form: any = {};
   games: Game[] = [];
-  currentGame: Game;
   notes: Note[];
   categories: Category[];
   states: State[];
@@ -33,7 +32,13 @@ export class GameCreateComponent implements OnInit {
   developpers: Developper[];
   editors: Editor[];
 
+  currentGame: Game;
+  currentNote = null;
   currentCategory = null;
+  currentState = null;
+  currentClassification = null;
+  currentDevelopper = null;
+  currentEditor = null;
 
   message: string;
   //categoryForm: FormGroup;
@@ -63,6 +68,8 @@ export class GameCreateComponent implements OnInit {
     this.noteService.findAll().subscribe(
       data => {
         this.notes = data;
+        //this.currentNote = this.notes[0];
+        this.currentGame.note = this.notes[0];
       },
       err => {
         this.message = JSON.parse(err.error).message;
@@ -72,7 +79,8 @@ export class GameCreateComponent implements OnInit {
     this.categoryService.findAll().subscribe(
       data => {
         this.categories = data;
-        this.currentCategory = this.categories[0];
+        //this.currentCategory = this.categories[0];
+        this.currentGame.category = this.categories[0];
       },
       err => {
         this.message = JSON.parse(err.error).message;
@@ -82,6 +90,8 @@ export class GameCreateComponent implements OnInit {
     this.stateService.findAll().subscribe(
       data => {
         this.states = data;
+        //this.currentState = this.states[0];
+        this.currentGame.state = this.states[0];
       },
       err => {
         this.message = JSON.parse(err.error).message;
@@ -91,6 +101,8 @@ export class GameCreateComponent implements OnInit {
     this.classificationService.findAll().subscribe(
       data => {
         this.classifications = data;
+        //this.currentClassification = this.classifications[0];
+        this.currentGame.classification = this.classifications[0];
       },
       err => {
         this.message = JSON.parse(err.error).message;
@@ -100,6 +112,8 @@ export class GameCreateComponent implements OnInit {
     this.developperService.findAll().subscribe(
       data => {
         this.developpers = data;
+        //this.currentDevelopper = this.developpers[0];
+        this.currentGame.idDevelopper = this.developpers[0];
       },
       err => {
         this.message = JSON.parse(err.error).message;
@@ -109,6 +123,8 @@ export class GameCreateComponent implements OnInit {
     this.editorService.findAll().subscribe(
       data => {
         this.editors = data;
+        //this.currentEditor= this.editors[0];
+        this.currentGame.idEditor = this.editors[0];
       },
       err => {
         this.message = JSON.parse(err.error).message;
