@@ -22,6 +22,11 @@ export class GamesComponent implements OnInit {
 
   showGames() {
       this.gameService.getGameByUser(this.storage.getUser().id).subscribe(data => {
+        data.map(game => {
+          if (game.cover !== null) {
+          game.cover = `http://localhost:8080/api/files/${game.cover}`
+          }
+        });
         this.games = data
         console.log(data);
       }, error => {

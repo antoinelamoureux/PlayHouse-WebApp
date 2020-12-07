@@ -16,6 +16,7 @@ import { ClassificationService } from '../services/classification.service';
 import { DevelopperService } from '../services/developper.service';
 import { EditorService } from '../services/editor.service';
 import {NgSelectModule, NgOption} from '@ng-select/ng-select';
+import { UploadService } from '../services/upload.service';
 
 @Component({
   selector: 'app-game-create',
@@ -51,6 +52,7 @@ export class GameCreateComponent implements OnInit {
     private classificationService: ClassificationService,
     private developperService: DevelopperService,
     private editorService: EditorService,
+    private uploadService: UploadService,
     private router: Router) {
     this.currentGame = new Game();
   }
@@ -141,6 +143,13 @@ export class GameCreateComponent implements OnInit {
       console.log(error);
     });
 
+    this.currentGame.cover = this.uploadService.getFile().name;
+    this.uploadService.uploadFile(this.uploadService.getFile()).subscribe(response => {
+      console.log(response);
+    }, error => {
+      console.log(error);
+    });
+    
     this.games.push(this.currentGame);
     console.log(this.games);
 

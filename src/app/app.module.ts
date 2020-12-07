@@ -22,6 +22,7 @@ import { GameCreateComponent } from './game-create/game-create.component';
 import { GameUpdateComponent } from './game-update/game-update.component';
 import { GameDeleteComponent } from './game-delete/game-delete.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { UploadFileComponent } from './upload-file/upload-file.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     UserComponent,
     GameCreateComponent,
     GameUpdateComponent,
-    GameDeleteComponent
+    GameDeleteComponent,
+    UploadFileComponent
   ],
   imports: [
     BrowserModule,
