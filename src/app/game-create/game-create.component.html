@@ -1,0 +1,63 @@
+<h3>Add a game</h3>
+<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    <p>Title :</p>
+    <p><input type="text" [(ngModel)]="currentGame.title" name="title" /></p>
+    <p>Description :</p>
+    <p><input type="textarea" [(ngModel)]="currentGame.description" name="description" /></p>
+    <p>Cover :</p>
+    <app-upload-file></app-upload-file>
+    <p>Add Date :</p>
+    <p><input type="text" [(ngModel)]="currentGame.addDate" name="addDate" /></p>
+    <p>Release Date :</p>
+    <p><input type="text" [(ngModel)]="currentGame.releaseDate" name="releaseDate" /></p>
+    <p>Price :</p>
+    <p><input type="text" [(ngModel)]="currentGame.price" name="price" /></p>
+    <label>Note:</label>
+    <ng-select [items]="notes" bindLabel="note" [(ngModel)]="currentNote" [ngModelOptions]="{standalone: true}">
+    </ng-select>
+    <p>
+        Selected Note: {{currentGame.note | json}}
+    </p>
+    <hr />
+    <label>Category :</label>
+    <ng-select [items]="categories" bindLabel="name" [(ngModel)]="currentCategory"
+        [ngModelOptions]="{standalone: true}">
+    </ng-select>
+    <p>
+        Selected Category: {{currentGame.category | json}}
+    </p>
+    <hr />
+    <label>State:</label>
+    <ng-select [items]="states" bindLabel="name" [(ngModel)]="currentState" [ngModelOptions]="{standalone: true}">
+    </ng-select>
+    <p>
+        Selected State: {{currentGame.state | json}}
+    </p>
+    <hr />
+    <label>Classification:</label>
+    <ng-select [items]="classifications" bindLabel="name" [(ngModel)]="currentClassification"
+        [ngModelOptions]="{standalone: true}">
+    </ng-select>
+    <p>
+        Selected Classification: {{currentGame.classification | json}}
+    </p>
+    <hr />
+    <label>Developper:</label>
+    <ng-select [items]="developpers" bindLabel="name" [(ngModel)]="currentDevelopper"
+        [ngModelOptions]="{standalone: true}">
+    </ng-select>
+    <p>
+        Selected Developper: {{currentGame.idDevelopper | json}}
+    </p>
+    <hr />
+    <label>Editor:</label>
+    <ng-select [items]="editors" bindLabel="name" [(ngModel)]="currentEditor" [ngModelOptions]="{standalone: true}">
+    </ng-select>
+    <p>
+        Selected Editor: {{currentGame.idEditor | json}}
+    </p>
+    <hr />
+    <p>
+        <button>Add Game</button>
+    </p>
+</form>
