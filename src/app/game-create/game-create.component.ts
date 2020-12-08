@@ -163,8 +163,9 @@ export class GameCreateComponent implements OnInit {
     }, error => {
       console.log(error);
     });
-
-    this.router.navigate(['/user']);
+    
+    const navigate = () => this.router.navigate(['/user']);
+    setTimeout(navigate, 5000);
   }
 
 }
