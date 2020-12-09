@@ -30,8 +30,9 @@ export class GameService {
     return this.http.delete<Game>(url);
   }
 
-  updateGame(game: Game): Observable<Game> {
-    return this.http.put<Game>(this.url, game);
+  updateGame(id: number, game: Game): Observable<Game> {
+    console.log(game.title);
+    return this.http.put<Game>(`${this.url}/${id}`, game);
   }
 
   getGameByUser(id: number): Observable<Game[]> {

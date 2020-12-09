@@ -15,7 +15,8 @@ import { ClassificationService } from '../services/classification.service';
 import { DevelopperService } from '../services/developper.service';
 import { EditorService } from '../services/editor.service';
 import { UploadService } from '../services/upload.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-game-update',
@@ -23,6 +24,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./game-update.component.scss']
 })
 export class GameUpdateComponent implements OnInit {
+  id: number;
   form: any = {};
   games: Game[] = [];
   notes: Note[];
@@ -39,11 +41,13 @@ export class GameUpdateComponent implements OnInit {
   currentClassification = null;
   currentDevelopper = null;
   currentEditor = null;
-
   message: string;
   //categoryForm: FormGroup;
 
-  constructor(private storage: TokenStorageService,
+  constructor(
+    private route: ActivatedRoute, 
+    private location: Location,
+    private storage: TokenStorageService,
     private gameService: GameService,
     private noteService: NoteService,
     private categoryService: CategoryService,
@@ -58,11 +62,12 @@ export class GameUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSelects();
-    /*
-    this.categoryForm = new FormGroup({
-      categoryControl: new FormControl(this.categories[1])
-    });
-    */
+    this.getGame();
+  }
+
+  getGame(): void {
+    this.id = +this.route.snapshot.paramMap.get('id');
+    this.gameService.getGame(this.id).subscribe(game => this.currentGame = game);
   }
 
   getSelects() {
@@ -134,31 +139,25 @@ export class GameUpdateComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('************ FORM DATA ***************');
-    console.log(this.form);
-    console.log(this.currentNote);
-    console.log(this.currentCategory);
-    console.log(this.currentState);
-    console.log(this.currentClassification);
-    console.log(this.currentDevelopper);
-    console.log(this.currentEditor);
-
-    this.setCurrentGame();
-
+    /*
     this.gameService.getGameByUser(this.storage.getUser().id).subscribe(data => {
       this.games = data
       console.log(data);
     }, error => {
       console.log(error);
     });
+    */
+    if (this.uploadService.getFile() !== undefined) {
+      this.currentGame.cover = this.uploadService.getFile().name;
 
-    this.currentGame.cover = this.uploadService.getFile().name;
-    this.uploadService.uploadFile(this.uploadService.getFile()).subscribe(response => {
-      console.log(response);
-    }, error => {
-      console.log(error);
-    });
+      this.uploadService.uploadFile(this.uploadService.getFile()).subscribe(response => {
+        console.log(response);
+      }, error => {
+        console.log(error);
+      });
+    } 
     
+    /*
     this.games.push(this.currentGame);
     console.log(this.games);
 
@@ -166,8 +165,10 @@ export class GameUpdateComponent implements OnInit {
       id: this.storage.getUser().id,
       game: this.currentGame
     };
+    */
+   console.log(this.currentGame)
 
-    this.gameService.addGame(data).subscribe(response => {
+    this.gameService.updateGame(this.id, this.currentGame).subscribe(response => {
       console.log(response);
     }, error => {
       console.log(error);
@@ -177,12 +178,7 @@ export class GameUpdateComponent implements OnInit {
     setTimeout(navigate, 5000);
   }
 
-  setCurrentGame() {
-    this.currentGame.note = this.currentNote;
-    this.currentGame.category = this.currentCategory;
-    this.currentGame.state = this.currentState;
-    this.currentGame.classification = this.currentClassification;
-    this.currentGame.idDevelopper = this.currentDevelopper;
-    this.currentGame.idEditor = this.currentEditor;
+  goBack(): void {
+    this.location.back();
   }
 }

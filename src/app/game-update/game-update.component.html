@@ -3,7 +3,7 @@
     <p>Title :</p>
     <p><input type="text" [(ngModel)]="currentGame.title" name="title" placeholder={{currentGame.title}}/></p>
     <p>Description :</p>
-    <p><textarea cols="30" row="5" [(ngModel)]="currentGame.description" name="description" placeholder={{currentGame.description}}></textarea></p>
+    <p><textarea cols="30" row="20" [(ngModel)]="currentGame.description" name="description" placeholder={{currentGame.description}}></textarea></p>
     <p>Cover :</p>
     <app-upload-file></app-upload-file>
     <p>Add Date :</p>
@@ -26,7 +26,6 @@
     <ng-select [items]="classifications" bindLabel="name" [(ngModel)]="currentClassification"
         [ngModelOptions]="{standalone: true}">
     </ng-select>
-
     <label>Developper:</label>
     <ng-select [items]="developpers" bindLabel="name" [(ngModel)]="currentDevelopper"
         [ngModelOptions]="{standalone: true}">
@@ -35,6 +34,7 @@
     <ng-select [items]="editors" bindLabel="name" [(ngModel)]="currentEditor" [ngModelOptions]="{standalone: true}">
     </ng-select>
     <p>
-        <button>Add Game</button>
+    <button>Update Game</button>
+    <button (click)="goBack()">Cancel</button>
     </p>
 </form>
