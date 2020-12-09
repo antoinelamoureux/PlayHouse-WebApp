@@ -8,6 +8,8 @@ import { UserComponent } from './user/user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { GameDetailsComponent } from './game-details/game-details.component';
 import { GameCreateComponent } from './game-create/game-create.component';
+import { GameDeleteComponent } from './game-delete/game-delete.component';
+import { GameUpdateComponent } from './game-update/game-update.component';
 
 const routes: Routes = [ 
   { path: 'home', component: HomeComponent },
@@ -16,8 +18,10 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'user', component: UserComponent },
   { path: 'admin', component: DashboardComponent },
-  { path: 'game-details', component: GameDetailsComponent },
   { path: 'user/game-create', component: GameCreateComponent },
+  { path: 'user/game-details/:id', component: GameDetailsComponent },
+  { path: 'user/game-delete/:id', component: GameDeleteComponent },
+  { path: 'user/game-update/:id', component: GameUpdateComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

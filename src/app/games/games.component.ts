@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { GameService } from '../services/game.service';
 import { Game } from '../models/game';
 import { TokenStorageService } from '../services/token-storage.service';
-import { Category } from '../models/category';
 
 @Component({
   selector: 'app-games',

@@ -1,9 +1,8 @@
 <h3>Games List</h3>
 <div><a href="/game-create" routerLink="game-create">Add a game</a></div>
 <div *ngFor="let game of games">
-    <div>{{ game.id }}</div>
     <div><img src={{game.cover}} width="200px"></div>
-    <div><a href="/game-details" routerLink="game-details">{{ game.title }}</a></div>
+    <div><a routerLink="/user/game-details/{{game.id}}">{{ game.title }}</a></div>
     <div>{{ game.description }}</div>
     <div>{{ game.addDate }}</div>
     <div>{{ game.releaseDate }}</div>
@@ -16,5 +15,8 @@
     <div>{{ game.platformCollection }}</div>
     <div>{{ game.idDevelopper.name }}</div>
     <div>{{ game.idEditor.name }}</div>
+    <br/>
+    <span><a routerLink="/user/game-delete/{{game.id}}">Delete this game</a></span> |
+    <span><a routerLink="/user/game-update/{{game.id}}">Update this game</a></span>
     <hr>
 </div>

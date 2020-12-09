@@ -25,9 +25,8 @@ export class GameService {
     return this.http.post<Game>(this.url, data);
   }
 
-  deleteGame(game: Game | number): Observable<Game>  {
-    const id = typeof game === 'number' ? game : game.id;
-    const url = `${this.url}/${id}`;
+  deleteGame(id: number): Observable<Game>  {
+    const url = `${this.url}/delete/${id}`;
     return this.http.delete<Game>(url);
   }
 

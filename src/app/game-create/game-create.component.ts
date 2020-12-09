@@ -135,7 +135,17 @@ export class GameCreateComponent implements OnInit {
   }
 
   onSubmit(): void {
+    console.log('************ FORM DATA ***************');
+    console.log(this.form);
+    console.log(this.currentNote);
     console.log(this.currentCategory);
+    console.log(this.currentState);
+    console.log(this.currentClassification);
+    console.log(this.currentDevelopper);
+    console.log(this.currentEditor);
+
+    this.setCurrentGame();
+
     this.gameService.getGameByUser(this.storage.getUser().id).subscribe(data => {
       this.games = data
       console.log(data);
@@ -166,6 +176,15 @@ export class GameCreateComponent implements OnInit {
     
     const navigate = () => this.router.navigate(['/user']);
     setTimeout(navigate, 5000);
+  }
+
+  setCurrentGame() {
+    this.currentGame.note = this.currentNote;
+    this.currentGame.category = this.currentCategory;
+    this.currentGame.state = this.currentState;
+    this.currentGame.classification = this.currentClassification;
+    this.currentGame.idDevelopper = this.currentDevelopper;
+    this.currentGame.idEditor = this.currentEditor;
   }
 
 }

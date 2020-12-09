@@ -1,1 +1,17 @@
-<p>game-details works!</p>
+<div><img src={{currentGame.cover}} width="200px"></div>
+<h2>{{ currentGame.title }}</h2>
+<div>{{ currentGame.description }}</div>
+<div>{{ currentGame.addDate }}</div>
+<div>{{ currentGame.releaseDate }}</div>
+<div>{{ currentGame.price | currency }}</div>
+<div>{{ stars }}</div>
+<div>{{ currentGame.category.name }}</div>
+<div>{{ currentGame.state.name }}</div>
+<div>{{ currentGame.classification.name }}</div>
+<!--<div>{{ currentGame.tagsCollection[0].title }}</div>-->
+<div>{{ currentGame.platformCollection }}</div>
+<div>{{ currentGame.idDevelopper.name }}</div>
+<div>{{ currentGame.idDevelopper.history }}</div>
+<div>{{ currentGame.idEditor.name }}</div>
+<div>{{ currentGame.idEditor.history }}</div>
+

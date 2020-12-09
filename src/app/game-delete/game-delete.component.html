@@ -1,1 +1,4 @@
-<p>game-delete works!</p>
+<h2>Delete the game</h2>
+<p>Delete the game {{currentGame.title}} ?</p>
+<button (click)="deleteGame(currentGame.id)">Yes</button>
+<button (click)="goBack()">No</button>

@@ -1,1 +1,40 @@
-<p>game-update works!</p>
+<h3>Update a game</h3>
+<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    <p>Title :</p>
+    <p><input type="text" [(ngModel)]="currentGame.title" name="title" placeholder={{currentGame.title}}/></p>
+    <p>Description :</p>
+    <p><textarea cols="30" row="5" [(ngModel)]="currentGame.description" name="description" placeholder={{currentGame.description}}></textarea></p>
+    <p>Cover :</p>
+    <app-upload-file></app-upload-file>
+    <p>Add Date :</p>
+    <p><input type="text" [(ngModel)]="currentGame.addDate" name="addDate" placeholder={{currentGame.addDate}}/></p>
+    <p>Release Date :</p>
+    <p><input type="text" [(ngModel)]="currentGame.releaseDate" name="releaseDate" placeholder={{currentGame.releaseDate}}/></p>
+    <p>Price :</p>
+    <p><input type="text" [(ngModel)]="currentGame.price" name="price" placeholder={{currentGame.price}}/></p>
+    <label>Note:</label>
+    <ng-select [items]="notes" bindLabel="note" [(ngModel)]="currentNote" [ngModelOptions]="{standalone: true}">
+    </ng-select>
+    <label>Category :</label>
+    <ng-select [items]="categories" bindLabel="name" [(ngModel)]="currentCategory"
+        [ngModelOptions]="{standalone: true}">
+    </ng-select>
+    <label>State:</label>
+    <ng-select [items]="states" bindLabel="name" [(ngModel)]="currentState" [ngModelOptions]="{standalone: true}">
+    </ng-select>
+    <label>Classification:</label>
+    <ng-select [items]="classifications" bindLabel="name" [(ngModel)]="currentClassification"
+        [ngModelOptions]="{standalone: true}">
+    </ng-select>
+
+    <label>Developper:</label>
+    <ng-select [items]="developpers" bindLabel="name" [(ngModel)]="currentDevelopper"
+        [ngModelOptions]="{standalone: true}">
+    </ng-select>
+    <label>Editor:</label>
+    <ng-select [items]="editors" bindLabel="name" [(ngModel)]="currentEditor" [ngModelOptions]="{standalone: true}">
+    </ng-select>
+    <p>
+        <button>Add Game</button>
+    </p>
+</form>
