@@ -1,0 +1,20 @@
+
+.navigation {
+    display: flex;
+    flex-wrap: row nowrap;
+    justify-content: space-between;
+}
+.nav-header {
+    font-weight: 400;
+    padding: 10px;
+}
+.nav-item {
+    display: flex;
+    flex-wrap: row nowrap;
+    justify-content: space-between;
+    text-decoration: none;
+    li {
+        margin-right: 20px;
+        list-style: none;
+    }
+}

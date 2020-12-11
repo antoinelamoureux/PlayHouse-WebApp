@@ -23,6 +23,16 @@ import { GameUpdateComponent } from './game-update/game-update.component';
 import { GameDeleteComponent } from './game-delete/game-delete.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { UploadFileComponent } from './upload-file/upload-file.component';
+import { NavCollectionComponent } from './nav-collection/nav-collection.component';
+import { GamePlatformComponent } from './game-platform/game-platform.component';
+import { GameCategoryComponent } from './game-category/game-category.component';
+import { GameDateComponent } from './game-date/game-date.component';
+import { GamePriceComponent } from './game-price/game-price.component';
+import { GameRatingComponent } from './game-rating/game-rating.component';
+import { GameStateComponent } from './game-state/game-state.component';
+import { GameTagsComponent } from './game-tags/game-tags.component';
+import { GameDevelopperComponent } from './game-developper/game-developper.component';
+import { GameEditorComponent } from './game-editor/game-editor.component';
 
 
 @NgModule({
@@ -42,7 +52,17 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
     GameCreateComponent,
     GameUpdateComponent,
     GameDeleteComponent,
-    UploadFileComponent
+    UploadFileComponent,
+    NavCollectionComponent,
+    GamePlatformComponent,
+    GameCategoryComponent,
+    GameDateComponent,
+    GamePriceComponent,
+    GameRatingComponent,
+    GameStateComponent,
+    GameTagsComponent,
+    GameDevelopperComponent,
+    GameEditorComponent
   ],
   imports: [
     BrowserModule,

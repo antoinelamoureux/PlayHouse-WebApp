@@ -1,0 +1,76 @@
+<nav>
+    <ul routerLinkActive="active">
+        <li class="dropdown">
+            <a class="dropbtn" href="/user/game-platform" routerLink="game-platform">Platform</a>
+            <div class="dropdown-content">
+                <div *ngFor="let platform of platforms">
+                <a routerLink="/user/game-platform/{{platform.id}}">{{platform.name}}</a>
+            </div>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a class="dropbtn" href="/user/game-category" routerLink="game-category">Category</a>
+            <div class="dropdown-content">
+                <div *ngFor="let category of categories">
+                <a routerLink="/user/game-category/{{category.id}}">{{category.name}}</a>
+            </div>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a class="dropbtn" href="/user/game-date" routerLink="game-date">Release Date</a>
+            <div class="dropdown-content">
+                <div *ngFor="let date of dates">
+                <a routerLink="/user/game-date/">{{date}}</a>
+            </div>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a class="dropbtn" href="/user/game-price" routerLink="game-price">Price</a>
+            <div class="dropdown-content">
+                <div *ngFor="let price of prices">
+                <a routerLink="/user/game-price/">{{price}}</a>
+            </div>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a class="dropbtn" href="/user/game-rating" routerLink="game-rating">Rating</a>
+            <div class="dropdown-content">
+                <div *ngFor="let note of notes">
+                <a routerLink="/user/game-category/{{note.id}}">{{note.note}}</a>
+            </div>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a class="dropbtn" href="/user/game-state" routerLink="game-state">State</a>
+            <div class="dropdown-content">
+                <div *ngFor="let state of states">
+                <a routerLink="/user/game-category/{{state.id}}">{{state.name}}</a>
+            </div>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a class="dropbtn" href="/user/game-developper" routerLink="game-developper">Developper</a>
+            <div class="dropdown-content">
+                <div *ngFor="let developper of developpers">
+                <a routerLink="/user/game-category/{{developper.id}}">{{developper.name}}</a>
+            </div>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a class="dropbtn" href="/user/game-editor" routerLink="game-editor">Editor</a>
+            <div class="dropdown-content">
+                <div *ngFor="let editor of editors">
+                <a routerLink="/user/game-editor/{{editor.id}}">{{editor.name}}</a>
+            </div>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a class="dropbtn" href="/user/game-tags" routerLink="game-tags">Tags</a>
+            <div class="dropdown-content">
+                <div *ngFor="let tag of tags">
+                <a routerLink="/user/game-editor/{{tag.id}}">{{tag.title}}</a>
+            </div>
+            </div>
+        </li>
+    </ul>
+</nav>
