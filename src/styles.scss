@@ -2,8 +2,157 @@
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
 
-html, body, html * {
+html * {
+    margin: 0;
+}
+html, body{
+    margin: 0;
     font-family: 'Roboto', sans-serif;
     color: rgb(255, 255, 255);
-    background-color: rgb(20, 20, 20);
+    background-color: rgb(24, 24, 24);
 }
+h2 {
+    font-size: xx-large;
+    font-weight: 700;
+}
+p, div{
+    font-weight: 200;
+}
+.game-title{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-size: x-large;
+    font-weight: 400;
+}
+a {
+    text-decoration: none;
+    color: rgb(211, 211, 211);
+}
+a:hover {
+    color: rgb(255, 255, 255);
+}
+button {
+    cursor: pointer;   
+    border: none;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgb(39, 39, 39);
+    font-size: small;
+    font-weight: 500;
+    margin-right: 10px;
+    color: rgb(209, 209, 209);
+}
+button:hover{
+    background-color: rgb(65, 65, 65);
+    color: rgb(255, 255, 255);
+}
+img {
+    margin-top: 30px;
+}
+.grid-games {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1rem;
+    grid-auto-rows: minmax(5rem, auto);
+    text-align: center;
+}
+.col-1-row-1 { 
+    grid-column: 1;
+    grid-row: 1;
+}
+.col-2-row-1 { 
+    grid-column: 1 / 5;
+    grid-row: 1;
+}
+.col-5-row-2 { 
+    grid-row: 2;
+}
+.col-5-row-1 { 
+    grid-column: 5;
+    grid-row: 1;
+}
+.col-1-5-row-1 { 
+    grid-column: 2 / 5;
+    grid-row: 1;
+}
+.col-1-5-row-1 > * { 
+    text-align: left;
+    margin: 1rem;
+}
+.col-1-5-row-1 > h2 { 
+    margin-top: 2rem;
+}
+.col-1-row-1 > img {
+    width: 20rem;
+    height: 25rem;
+}
+.header {
+    text-align: left;
+}
+.gradient {
+    position: relative;
+    background: linear-gradient(rgba(24, 24, 24, 1) 10%, rgba(29, 29, 29, 0.5) 90%);
+    height: 100vh;
+    overflow: auto;
+}
+input[type="search"] {
+    border-radius: 2em;
+    font-size: 15px;
+    font-weight: 400;
+    color: white;
+    transition: all 0.4s ease-out;
+}
+input[type="search"]:focus {
+    background-color: rgb(39, 39, 39);
+    border-radius: 2em;
+    border: none;
+    box-shadow: 0px 0px 0px 3px rgb(77, 80, 90);
+}
+input[type="text"] {
+    border-radius: 0.5em;
+    width: 100vw;
+    height: 2.5vh;
+    border: 0.2rem solid rgb(44, 44, 44);
+    background-color: rgb(24, 24, 24);
+    font-size: 15px;
+    font-weight: 400;
+    color: white;
+    transition: all 0.4s ease-out;
+}
+input[type="text"]:focus {
+    background-color: rgb(39, 39, 39);
+    border: none;
+    box-shadow: 0px 0px 0px 3px rgb(77, 80, 90);
+}
+*:focus {
+    outline: none;
+}
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 0;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    margin: 0;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }

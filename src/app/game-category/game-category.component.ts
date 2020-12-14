@@ -3,6 +3,7 @@ import { Category } from '../models/category';
 import { ActivatedRoute } from '@angular/router';
 import { PlatformService } from '../services/platform.service';
 import { CategoryService } from '../services/category.service';
+import { GameService } from '../services/game.service';
 
 @Component({
   selector: 'app-game-category',
@@ -14,8 +15,11 @@ export class GameCategoryComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute, 
-    private categoryService: CategoryService
-  ) { }
+    private categoryService: CategoryService,
+    private gameService: GameService
+  ) {
+    this.currentCategory = {id: 0, name: '', games: []};
+   }
 
   ngOnInit(): void {
     this.getCategory();
@@ -24,5 +28,6 @@ export class GameCategoryComponent implements OnInit {
   getCategory(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.categoryService.findById(id).subscribe(category => this.currentCategory = category);
+    this.gameService.findGamesByCategoryId(id).subscribe(games => this.currentCategory.games = games);
   }
 }

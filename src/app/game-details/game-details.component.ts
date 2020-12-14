@@ -14,7 +14,9 @@ export class GameDetailsComponent implements OnInit {
   stars: string;
 
   constructor(private route: ActivatedRoute, 
-    private gameService: GameService) { }
+    private gameService: GameService) { 
+      this.currentGame = new Game();
+    }
 
   ngOnInit(): void {
     this.getGame();

@@ -1,28 +1,38 @@
+<div class="gradient">
 <nav class="navigation">
-  <div class="nav-header">PlayHouse</div>
-    <ul class="nav-item" routerLinkActive="active">
-      <li>
-        <a href="/home" routerLink="home">Home</a>
-      </li>
-      <li *ngIf="showDashBoard">
-        <a href="/admin" routerLink="admin">Dashboard</a>
-      </li>
-      <li *ngIf="isLoggedIn">
-        <a href="/user" routerLink="user">Collection</a>
-      </li>
-    </ul>
-    <ul class="nav-item" *ngIf="!isLoggedIn">
-      <li>
-        <a href="/register" routerLink="register">Sign Up</a>
-      </li>
-      <li>
-        <a href="/login" routerLink="login">Sign In</a>
-      </li>
-    </ul>
-    <ul class="nav-item" *ngIf="isLoggedIn">
-      <li><a href="/profile"></a>{{username}}</li>
-      <li><a href (click)="logout()">Log Out</a></li>
-    </ul>
-  </nav>
-  <router-outlet></router-outlet>
-
+  <div class="nav-header"><i class="material-icons">
+    extension
+    </i>PlayHouse</div>
+    <app-game-search class="nav-item"></app-game-search>
+  <ul class="nav-item" routerLinkActive="active">
+    <li>
+      <a href="/home" routerLink="home">Home</a>
+    </li>
+    <li *ngIf="showDashBoard">
+      <a href="/admin" routerLink="admin">Dashboard</a>
+    </li>
+    <li *ngIf="isLoggedIn">
+      <a href="/user" routerLink="user">Collection</a>
+    </li>
+    <li *ngIf="isLoggedIn">
+      <a href="/user" routerLink="user">Add a game</a>
+    </li>
+    <li *ngIf="isLoggedIn">
+      <a href="/user" routerLink="user">Shopping list</a>
+    </li>
+  </ul>
+  <ul class="nav-item" *ngIf="!isLoggedIn">
+    <li>
+      <a href="/register" routerLink="register">Sign Up</a>
+    </li>
+    <li>
+      <a href="/login" routerLink="login">Sign In</a>
+    </li>
+  </ul>
+  <ul class="nav-item" *ngIf="isLoggedIn">
+    <li><a href="/profile"></a><div class="profile"></div>{{username}}</li>
+    <li><a href (click)="logout()">Sign Out</a></li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
+</div>

@@ -1,22 +1,23 @@
-<h3>Games List</h3>
-<div><a href="/game-create" routerLink="game-create">Add a game</a></div>
-<div *ngFor="let game of games">
-    <div><img src={{game.cover}} width="200px"></div>
-    <div><a routerLink="/user/game-details/{{game.id}}">{{ game.title }}</a></div>
-    <div>{{ game.description }}</div>
-    <div>{{ game.addDate }}</div>
-    <div>{{ game.releaseDate }}</div>
-    <div>{{ game.price | currency }}</div>
-    <div>{{ game.note.note }}</div>
-    <div>{{ game.category.name }}</div>
-    <div>{{ game.state.name }}</div>
-    <div>{{ game.classification.name }}</div>
-    <!--<div>{{ game.tagsCollection[0].title }}</div>-->
-    <div>{{ game.platformCollection }}</div>
-    <div>{{ game.idDevelopper.name }}</div>
-    <div>{{ game.idEditor.name }}</div>
-    <br/>
-    <span><a routerLink="/user/game-delete/{{game.id}}">Delete this game</a></span> |
-    <span><a routerLink="/user/game-update/{{game.id}}">Update this game</a></span>
-    <hr>
+<div class="grid-games">
+    <div class="col-2-row-1 header">
+        <h2>Games List</h2>
+        <p>Welcome, you have 5 games in your collection.</p>
+    </div>
+    <div class="col-5-row-1">
+        <button><a href="/game-create" routerLink="game-create">Add a game</a></button>
+    </div>
+    <ng-container *ngFor="let game of games; let i = index">
+        <div class="col-5-row-2">
+            <div><img src={{game.cover}} width="200px" height="250px"></div>
+            <div class="game-title"><a routerLink="/user/game-details/{{game.id}}">{{ game.title }}</a></div>
+            <div>
+                <p><strong>Release Date : </strong></p>
+                <p>{{ game.releaseDate }}</p>
+            </div>
+            <div>
+                <p><strong>Price : </strong></p>
+                <p>{{ game.price | currency }}</p>
+            </div>
+        </div>
+    </ng-container>
 </div>

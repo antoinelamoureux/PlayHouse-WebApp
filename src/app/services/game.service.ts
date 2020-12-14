@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Game } from '../models/game';
 import { Observable } from 'rxjs';
+import { TokenStorageService } from './token-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,10 @@ export class GameService {
   url: string = 'http://localhost:8080/api/games';
   games: Game[];
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private storage: TokenStorageService
+    ) { }
 
   getGames(): Observable<Game[]> {
     return this.http.get<Game[]>(this.url);
@@ -38,5 +42,12 @@ export class GameService {
   getGameByUser(id: number): Observable<Game[]> {
     const url = `${this.url}/user/${id}`;
     return this.http.get<Game[]>(url);
+  }
+
+  findGamesByCategoryId(id: number): Observable<Game[]> {
+    const userId: number = this.storage.getUser().id;
+    const params = new HttpParams().append('userId', userId.toString());
+    const url = `${this.url}/category/${id}`;
+    return this.http.get<Game[]>(url, {params: params});
   }
 }

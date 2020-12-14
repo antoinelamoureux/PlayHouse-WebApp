@@ -139,6 +139,7 @@ export class GameUpdateComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.setCurrentGame();
     /*
     this.gameService.getGameByUser(this.storage.getUser().id).subscribe(data => {
       this.games = data
@@ -176,6 +177,15 @@ export class GameUpdateComponent implements OnInit {
     
     const navigate = () => this.router.navigate(['/user']);
     setTimeout(navigate, 5000);
+  }
+
+  setCurrentGame() {
+    this.currentGame.note = this.currentNote;
+    this.currentGame.category = this.currentCategory;
+    this.currentGame.state = this.currentState;
+    this.currentGame.classification = this.currentClassification;
+    this.currentGame.idDevelopper = this.currentDevelopper;
+    this.currentGame.idEditor = this.currentEditor;
   }
 
   goBack(): void {

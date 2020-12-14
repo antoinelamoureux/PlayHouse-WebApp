@@ -1,5 +1,4 @@
-<h3>{{currentCategory.name}}</h3>
-<!--
+<h3>{{currentCategory.name }}</h3>
 <div *ngFor="let game of currentCategory.games">
     <div><img src={{game.cover}} width="200px"></div>
     <div><a routerLink="/user/game-details/{{game.id}}">{{ game.title }}</a></div>
@@ -18,4 +17,4 @@
     <span><a routerLink="/user/game-delete/{{game.id}}">Delete this game</a></span> |
     <span><a routerLink="/user/game-update/{{game.id}}">Update this game</a></span>
     <hr>
-</div>-->
+</div>

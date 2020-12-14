@@ -1,4 +1,6 @@
-<div><img src={{currentGame.cover}} width="200px"></div>
+<div class="grid-games">
+<div class="col-1-row-1"><img src={{currentGame.cover}} width="200px"></div>
+<div class="col-1-5-row-1">
 <h2>{{ currentGame.title }}</h2>
 <div>{{ currentGame.description }}</div>
 <div>{{ currentGame.addDate }}</div>
@@ -14,4 +16,8 @@
 <div>{{ currentGame.idDevelopper.history }}</div>
 <div>{{ currentGame.idEditor.name }}</div>
 <div>{{ currentGame.idEditor.history }}</div>
-
+<br/>
+<button routerLink="/user/game-delete/{{currentGame.id}}">Delete this game</button>
+<button routerLink="/user/game-update/{{currentGame.id}}">Update this game</button>
+</div>
+</div>
