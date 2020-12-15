@@ -25,8 +25,6 @@ import { TagService } from '../services/tag.service';
 export class NavCollectionComponent implements OnInit {
   platforms: Platform[];
   categories: Category[];
-  dates: string[];
-  prices: string[];
   notes: Note[];
   states: State[];
   classifications: Classification[];
@@ -47,8 +45,6 @@ export class NavCollectionComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    this.dates = ['< 1980', '1980 - 1990', '1990 - 2000', '2000 - 2010', '> 2010'];
-    this.prices = ['< 29$', '29$ - 59$', '59$ - 99$', '99$ - 199$', '> 199$'];
     this.getDropdowns();
   }
 

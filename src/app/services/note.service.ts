@@ -15,4 +15,9 @@ export class NoteService {
   findAll(): Observable<Note[]> {
     return this.http.get<Note[]>(this.url);
   }
+
+  findById(id: number): Observable<Note> {
+    const url = `${this.url}/${id}`;
+    return this.http.get<Note>(url);
+  }
 }

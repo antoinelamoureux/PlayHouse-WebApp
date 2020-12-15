@@ -19,6 +19,7 @@ import { GameStateComponent } from './game-state/game-state.component';
 import { GameEditorComponent } from './game-editor/game-editor.component';
 import { GameTagsComponent } from './game-tags/game-tags.component';
 import { GameDevelopperComponent } from './game-developper/game-developper.component';
+import { GamesComponent } from './games/games.component';
 
 const routes: Routes = [ 
   { path: 'home', component: HomeComponent },
@@ -27,6 +28,14 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'user', component: UserComponent },
   { path: 'admin', component: DashboardComponent },
+  { path: 'user/games/platform/:id', component: GamesComponent, data: {filter: "platform"}},
+  { path: 'user/games/category/:id', component: GamesComponent, data: {filter: "category"}},
+  { path: 'user/games/classification/:id', component: GamesComponent, data: {filter: "classification"}},
+  { path: 'user/games/rating/:id', component: GamesComponent, data: {filter: "note"}},
+  { path: 'user/games/state/:id', component: GamesComponent, data: {filter: "state"}},
+  { path: 'user/games/developper/:id', component: GamesComponent, data: {filter: "developper"}},
+  { path: 'user/games/editor/:id', component: GamesComponent, data: {filter: "editor"}},
+  { path: 'user/games/tag/:id', component: GamesComponent, data: {filter: "tag"}},
   { path: 'user/game-create', component: GameCreateComponent },
   { path: 'user/game-details/:id', component: GameDetailsComponent },
   { path: 'user/game-delete/:id', component: GameDeleteComponent },

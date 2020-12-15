@@ -3,7 +3,7 @@
     <p>Title :</p>
     <p><input type="text" [(ngModel)]="currentGame.title" name="title" /></p>
     <p>Description :</p>
-    <p><input type="textarea" [(ngModel)]="currentGame.description" name="description" /></p>
+    <p><input type="textarea" cols="10" rows="5" [(ngModel)]="currentGame.description" name="description" /></p>
     <p>Cover :</p>
     <app-upload-file></app-upload-file>
     <p>Add Date :</p>
@@ -56,6 +56,14 @@
     <p>
         Selected Editor: {{currentGame.idEditor | json}}
     </p>
+    <hr />
+    <label>Tags :</label>
+    <ng-select [items]="tags" bindLabel="title" [(ngModel)]="currentTags" [multiple]="true" [ngModelOptions]="{standalone: true}">
+    </ng-select>
+    <hr />
+    <label>Platforms :</label>
+    <ng-select [items]="platforms" bindLabel="name" [(ngModel)]="currentPlatforms" [multiple]="true" [ngModelOptions]="{standalone: true}">
+    </ng-select>
     <hr />
     <p>
         <button>Add Game</button>

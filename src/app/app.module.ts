@@ -33,6 +33,7 @@ import { GameStateComponent } from './game-state/game-state.component';
 import { GameTagsComponent } from './game-tags/game-tags.component';
 import { GameDevelopperComponent } from './game-developper/game-developper.component';
 import { GameEditorComponent } from './game-editor/game-editor.component';
+import { GameClassificationComponent } from './game-classification/game-classification.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { GameEditorComponent } from './game-editor/game-editor.component';
     GameStateComponent,
     GameTagsComponent,
     GameDevelopperComponent,
-    GameEditorComponent
+    GameEditorComponent,
+    GameClassificationComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 <div class="grid-games">
     <div class="col-2-row-1 header">
-        <h2>Games List</h2>
-        <p>Welcome, you have 5 games in your collection.</p>
+        <h2>Games List : {{ currentList }}</h2>
+        <p>Welcome, you have {{gamesCount}} games in your collection for {{ filter }} {{ currentList }}.</p>
     </div>
     <div class="col-5-row-1">
         <button><a href="/game-create" routerLink="game-create">Add a game</a></button>

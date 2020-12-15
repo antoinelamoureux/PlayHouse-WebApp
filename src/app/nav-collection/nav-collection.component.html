@@ -11,82 +11,72 @@
             </div>
         </li>
         <li class="dropdown">
-            <a class="dropbtn" href="/user/game-category" routerLink="game-category">Category<i class="material-icons">
+            <a class="dropbtn" href="/user/games/category" routerLink="/user/games/category">Category<i class="material-icons">
                 keyboard_arrow_down
             </i></a>
             <div class="dropdown-content">
                 <div *ngFor="let category of categories">
-                    <a routerLink="/user/game-category/{{category.id}}">{{category.name}}</a>
+                    <a routerLink="/user/games/category/{{category.id}}">{{category.name}}</a>
                 </div>
             </div>
         </li>
         <li class="dropdown">
-            <a class="dropbtn" href="/user/game-date" routerLink="game-date">Release Date<i class="material-icons">
+            <a class="dropbtn" href="/user/games/classification" routerLink="/user/">Classification<i class="material-icons">
                 keyboard_arrow_down
             </i></a>
             <div class="dropdown-content">
-                <div *ngFor="let date of dates">
-                    <a routerLink="/user/game-date/">{{date}}</a>
+                <div *ngFor="let classification of classifications">
+                    <a routerLink="/user/games/classification/{{classification.id}}">{{classification.name}}</a>
                 </div>
             </div>
         </li>
         <li class="dropdown">
-            <a class="dropbtn" href="/user/game-price" routerLink="game-price">Price<i class="material-icons">
-                keyboard_arrow_down
-            </i></a>
-            <div class="dropdown-content">
-                <div *ngFor="let price of prices">
-                    <a routerLink="/user/game-price/">{{price}}</a>
-                </div>
-            </div>
-        </li>
-        <li class="dropdown">
-            <a class="dropbtn" href="/user/game-rating" routerLink="game-rating">Rating<i class="material-icons">
+            <a class="dropbtn" href="/user/games/rating" routerLink="/user/game/rating">Rating<i class="material-icons">
                 keyboard_arrow_down
             </i></a>
             <div class="dropdown-content">
                 <div *ngFor="let note of notes">
-                    <a routerLink="/user/game-category/{{note.id}}">{{note.note}}</a>
+                    <a routerLink="/user/games/rating/{{note.id}}">{{note.note}}</a>
                 </div>
             </div>
         </li>
         <li class="dropdown">
-            <a class="dropbtn" href="/user/game-state" routerLink="game-state">State<i class="material-icons">
+            <a class="dropbtn" href="/user/games/state" routerLink="/user/games/state">State<i class="material-icons">
                 keyboard_arrow_down
             </i></a>
             <div class="dropdown-content">
                 <div *ngFor="let state of states">
-                    <a routerLink="/user/game-category/{{state.id}}">{{state.name}}</a>
+                    <a routerLink="/user/games/state/{{state.id}}">{{state.name}}</a>
                 </div>
             </div>
         </li>
         <li class="dropdown">
-            <a class="dropbtn" href="/user/game-developper" routerLink="game-developper">Developper<i class="material-icons">
+            <a class="dropbtn" href="/user/games/developper" routerLink="/user/games/developper">Developper<i class="material-icons">
                 keyboard_arrow_down
             </i></a>
             <div class="dropdown-content">
                 <div *ngFor="let developper of developpers">
-                    <a routerLink="/user/game-category/{{developper.id}}">{{developper.name}}</a>
+                    <a routerLink="/user/games/developper/{{developper.id}}">{{developper.name}}</a>
                 </div>
             </div>
         </li>
         <li class="dropdown">
-            <a class="dropbtn" href="/user/game-editor" routerLink="game-editor">Editor<i class="material-icons">
+            <a class="dropbtn" href="/user/games/editor" routerLink="/user/games/editor">Editor<i class="material-icons">
                 keyboard_arrow_down
             </i></a>
             <div class="dropdown-content">
                 <div *ngFor="let editor of editors">
-                    <a routerLink="/user/game-editor/{{editor.id}}">{{editor.name}}</a>
+                    <a routerLink="/user/games/editor/{{editor.id}}">{{editor.name}}</a>
                 </div>
             </div>
         </li>
         <li class="dropdown">
-            <a class="dropbtn" href="/user/game-tags" routerLink="game-tags">Tags<i class="material-icons">
+            <a class="dropbtn" href="user/games/tag/" routerLink="user/games/tag/">Tags<i class="material-icons">
                 keyboard_arrow_down
             </i></a>
             <div class="dropdown-content">
                 <div *ngFor="let tag of tags">
-                    <a routerLink="/user/game-editor/{{tag.id}}">{{tag.title}}</a>
+                    <a routerLink="/user/games/tag/{{tag.id}}">{{tag.title}}</a>
                 </div>
             </div>
         </li>

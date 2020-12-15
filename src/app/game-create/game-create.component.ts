@@ -17,6 +17,10 @@ import { DevelopperService } from '../services/developper.service';
 import { EditorService } from '../services/editor.service';
 import {NgSelectModule, NgOption} from '@ng-select/ng-select';
 import { UploadService } from '../services/upload.service';
+import { Platform } from '../models/platform';
+import { Tag } from '../models/tag';
+import { PlatformService } from '../services/platform.service';
+import { TagService } from '../services/tag.service';
 
 @Component({
   selector: 'app-game-create',
@@ -32,6 +36,8 @@ export class GameCreateComponent implements OnInit {
   classifications: Classification[];
   developpers: Developper[];
   editors: Editor[];
+  platforms: Platform[];
+  tags: Tag[];
 
   currentGame: Game;
   currentNote = null;
@@ -40,6 +46,8 @@ export class GameCreateComponent implements OnInit {
   currentClassification = null;
   currentDevelopper = null;
   currentEditor = null;
+  currentPlatforms = null;
+  currentTags = null;
 
   message: string;
   //categoryForm: FormGroup;
@@ -52,6 +60,8 @@ export class GameCreateComponent implements OnInit {
     private classificationService: ClassificationService,
     private developperService: DevelopperService,
     private editorService: EditorService,
+    private platformService: PlatformService,
+    private tagsService: TagService,
     private uploadService: UploadService,
     private router: Router) {
     this.currentGame = new Game();
@@ -132,6 +142,28 @@ export class GameCreateComponent implements OnInit {
         this.message = JSON.parse(err.error).message;
       }
     );
+
+    this.platformService.findAll().subscribe(
+      data => {
+        this.platforms = data;
+        //this.currentEditor= this.editors[0];
+        this.currentGame.platformCollection = this.platforms;
+      },
+      err => {
+        this.message = JSON.parse(err.error).message;
+      }
+    );
+
+    this.tagsService.findAll().subscribe(
+      data => {
+        this.tags = data;
+        //this.currentEditor= this.editors[0];
+        this.currentGame.tagsCollection = this.tags;
+      },
+      err => {
+        this.message = JSON.parse(err.error).message;
+      }
+    );
   }
 
   onSubmit(): void {
@@ -185,6 +217,8 @@ export class GameCreateComponent implements OnInit {
     this.currentGame.classification = this.currentClassification;
     this.currentGame.idDevelopper = this.currentDevelopper;
     this.currentGame.idEditor = this.currentEditor;
+    this.currentGame.platformCollection = this.currentPlatforms;
+    this.currentGame.tagsCollection = this.currentTags;
   }
 
 }

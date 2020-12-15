@@ -14,4 +14,9 @@ export class EditorService {
   findAll(): Observable<Editor[]> {
     return this.http.get<Editor[]>(this.url);
   }
+
+  findById(id: number): Observable<Editor> {
+    const url = `${this.url}/${id}`;
+    return this.http.get<Editor>(url);
+  }
 }

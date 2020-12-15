@@ -14,4 +14,9 @@ export class ClassificationService {
   findAll(): Observable<Classification[]> {
     return this.http.get<Classification[]>(this.url);
   }
+
+  findById(id: number): Observable<Classification> {
+    const url = `${this.url}/${id}`;
+    return this.http.get<Classification>(url);
+  }
 }

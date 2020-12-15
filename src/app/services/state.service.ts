@@ -14,4 +14,9 @@ export class StateService {
   findAll(): Observable<State[]> {
     return this.http.get<State[]>(this.url);
   }
+
+  findById(id: number): Observable<State> {
+    const url = `${this.url}/${id}`;
+    return this.http.get<State>(url);
+  }
 }

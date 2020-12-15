@@ -15,4 +15,9 @@ export class DevelopperService {
   findAll(): Observable<Developper[]> {
     return this.http.get<Developper[]>(this.url);
   }
+
+  findById(id: number): Observable<Developper> {
+    const url = `${this.url}/${id}`;
+    return this.http.get<Developper>(url);
+  }
 }

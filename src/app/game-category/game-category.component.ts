@@ -28,6 +28,13 @@ export class GameCategoryComponent implements OnInit {
   getCategory(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.categoryService.findById(id).subscribe(category => this.currentCategory = category);
-    this.gameService.findGamesByCategoryId(id).subscribe(games => this.currentCategory.games = games);
+    this.gameService.findGamesByCategoryId(id).subscribe(games => { 
+      games.map(game => {
+        if (game.cover !== null) {
+        game.cover = `http://localhost:8080/api/files/${game.cover}`
+        }
+      });
+      this.currentCategory.games = games 
+    });
   }
 }
