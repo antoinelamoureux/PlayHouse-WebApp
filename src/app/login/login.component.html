@@ -1,9 +1,11 @@
-<div>
-    <div>
+<div class="container">
         <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+            <h2>Manage your collection</h2>
+            <div>
             <label for="username">Username</label>
             <input type="text" name="form.username" [(ngModel)]="form.username" required #username="ngModel" />
             <div *ngIf="f.submitted && username.invalid">Username is required!</div>
+        </div>
             <div>
                 <label for="password">Password</label>
                 <input type="password" name="password" [(ngModel)]="form.password" required minlength="6"
@@ -25,5 +27,4 @@
     <div *ngIf="isLoggedIn">
         Logged in as {{ roles }}.
     </div>
-</div>
 </div>

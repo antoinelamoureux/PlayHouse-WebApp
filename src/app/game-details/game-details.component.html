@@ -3,8 +3,8 @@
 <div class="col-1-5-row-1">
 <h2>{{ currentGame.title }}</h2>
 <div>{{ currentGame.description }}</div>
-<div>{{ currentGame.addDate }}</div>
-<div>{{ currentGame.releaseDate }}</div>
+<div>{{ currentGame.addDate | date:'mediumDate' }}</div>
+<div>{{ currentGame.releaseDate | date:'mediumDate' }}</div>
 <div>{{ currentGame.price | currency }}</div>
 <div>{{ stars }}</div>
 <div>{{ currentGame.category.name }}</div>

@@ -34,6 +34,7 @@ import { GameTagsComponent } from './game-tags/game-tags.component';
 import { GameDevelopperComponent } from './game-developper/game-developper.component';
 import { GameEditorComponent } from './game-editor/game-editor.component';
 import { GameClassificationComponent } from './game-classification/game-classification.component';
+import { MessagesComponent } from './messages/messages.component';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { GameClassificationComponent } from './game-classification/game-classifi
     GameTagsComponent,
     GameDevelopperComponent,
     GameEditorComponent,
-    GameClassificationComponent
+    GameClassificationComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
