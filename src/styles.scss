@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
-@import "~@ng-select/ng-select/themes/default.theme.css";
+//@import "~@ng-select/ng-select/themes/default.theme.css";
 
 html * {
     margin: 0;
@@ -15,6 +15,7 @@ html, body{
 h2 {
     font-size: xx-large;
     font-weight: 700;
+    line-height: 1.5em;
 }
 p, div{
     font-weight: 200;
@@ -43,11 +44,31 @@ button {
     font-size: small;
     font-weight: 500;
     margin-right: 10px;
-    color: rgb(209, 209, 209);
+    color: rgb(255, 255, 255);
 }
 button:hover{
     background-color: rgb(65, 65, 65);
-    color: rgb(255, 255, 255);
+    color: rgb(221, 221, 221);
+}
+hr {
+    width: 100%;
+    border: 1px solid rgb(80, 80, 80);
+}
+.validation {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1em;
+    background-color: #6000b9;
+    font-size: medium;
+    font-weight: 500;
+}
+.validation:hover {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1em;
+    background-color: #460088;
+    font-size: medium;
+    font-weight: 500;
 }
 img {
     margin-top: 30px;
@@ -60,7 +81,7 @@ img {
     grid-auto-rows: minmax(4rem, auto);
     grid-gap: 1rem;
     grid-auto-flow: row;  
-    justify-items: start;
+    justify-items: center;
     text-align: center;
 }
 .col-1-row-1 { 
@@ -70,6 +91,7 @@ img {
 .col-2-row-1 { 
     grid-column: 1 / 5;
     grid-row: 1;
+    justify-self: start;
 }
 .col-5-row-2 { 
     grid-row: 2;
@@ -86,6 +108,7 @@ img {
 .col-1-5-row-1 > * { 
     text-align: left;
     margin: 1rem;
+    margin-left: 3rem;
 }
 .col-1-5-row-1 > h2 { 
     margin-top: 2rem;
@@ -97,13 +120,16 @@ img {
 .header {
     text-align: left;
 }
+/*
 .gradient {
     position: relative;
     background: linear-gradient(rgba(24, 24, 24, 1) 10%, rgba(29, 29, 29, 0.5) 90%);
     height: 100vh;
     overflow: auto;
 }
+*/
 form {
+    width: 20rem;
     margin: 5rem;
     padding: 5rem;
     background-color: #202020;
@@ -137,7 +163,6 @@ input[type="search"]:focus {
     box-shadow: 0px 0px 0px 3px rgb(77, 80, 90);
 }
 input[type="text"], input[type="password"], input[type="email"]{
-
     width: 100%;
     height: 2.5vh;
     border: none;

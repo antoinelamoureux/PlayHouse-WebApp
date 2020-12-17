@@ -1,5 +1,5 @@
-<h3>Update a game</h3>
 <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    <h2>Update a game</h2>
     <p>Title :</p>
     <p><input type="text" [(ngModel)]="currentGame.title" name="title" placeholder={{currentGame.title}}/></p>
     <p>Description :</p>

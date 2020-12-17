@@ -11,8 +11,8 @@ import { Game } from '../models/game';
 export class GameDetailsComponent implements OnInit {
   currentGame: Game;
   currentNote: number;
-  stars: string;
-
+  stars: number[] = [];
+  
   constructor(private route: ActivatedRoute, 
     private gameService: GameService) { 
       this.currentGame = new Game();
@@ -31,27 +31,27 @@ export class GameDetailsComponent implements OnInit {
       this.currentGame = game;
       this.currentNote = parseInt(game.note.note, 10);
       this.parseNote();
+      console.log(this.stars);
     });
   }
 
   parseNote() {
     switch (this.currentNote) {
       case 1:
-        this.stars = "*";
+        this.stars.push(1);
         break;
       case 2:
-        this.stars = "**";
+        this.stars.push(1, 2);
         break;
       case 3:
-        this.stars = "***";
+        this.stars.push(1, 2, 3);
         break;
       case 4:
-        this.stars = "****";
+        this.stars.push(1, 2, 3, 4);
         break;
       default:
-        this.stars = "*****";
+        this.stars.push(1);
     }
   }
-
 }
 

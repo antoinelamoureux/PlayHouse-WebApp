@@ -2,6 +2,7 @@
     <div>
         <img src="" alt="">
         <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+            <h2>Create a new account</h2>
             <div>
                 <label for="username">Username</label>
                 <input type="text" name="username" [(ngModel)]="form.username" required minlength="3" maxlength="20"
@@ -33,7 +34,7 @@
                 </div>
             </div>
             <div>
-                <button>Sign Up</button>
+                <button class="validation">Sign Up</button>
             </div>
             <div *ngIf="f.submitted && isSignUpFailed">Signup failed!<br />{{ errorMessage }}</div>
         </form>

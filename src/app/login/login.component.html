@@ -1,6 +1,6 @@
 <div class="container">
         <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-            <h2>Manage your collection</h2>
+            <h2>Manage your game collection</h2>
             <div>
             <label for="username">Username</label>
             <input type="text" name="form.username" [(ngModel)]="form.username" required #username="ngModel" />
@@ -18,7 +18,10 @@
                 </div>
             </div>
             <div>
-                <button>Login</button>
+                <button class="validation">Login</button>
+            </div>
+            <div id="register">
+                <a routerLink="/register">No account yet ? Sign up now</a>
             </div>
             <div *ngIf="f.submitted && isLoginFailed">
                 <div>Login failed: {{ errorMessage }}</div>

@@ -1,23 +1,29 @@
+<app-nav-collection></app-nav-collection>
 <div class="grid-games">
-<div class="col-1-row-1"><img src={{currentGame.cover}} width="200px"></div>
-<div class="col-1-5-row-1">
-<h2>{{ currentGame.title }}</h2>
-<div>{{ currentGame.description }}</div>
-<div>{{ currentGame.addDate | date:'mediumDate' }}</div>
-<div>{{ currentGame.releaseDate | date:'mediumDate' }}</div>
-<div>{{ currentGame.price | currency }}</div>
-<div>{{ stars }}</div>
-<div>{{ currentGame.category.name }}</div>
-<div>{{ currentGame.state.name }}</div>
-<div>{{ currentGame.classification.name }}</div>
-<!--<div>{{ currentGame.tagsCollection[0].title }}</div>-->
-<div>{{ currentGame.platformCollection }}</div>
-<div>{{ currentGame.idDevelopper.name }}</div>
-<div>{{ currentGame.idDevelopper.history }}</div>
-<div>{{ currentGame.idEditor.name }}</div>
-<div>{{ currentGame.idEditor.history }}</div>
-<br/>
-<button routerLink="/user/game-delete/{{currentGame.id}}">Delete this game</button>
-<button routerLink="/user/game-update/{{currentGame.id}}">Update this game</button>
-</div>
+    <div class="col-1-row-1"><img src={{currentGame.cover}} /></div>
+    <div class="col-1-5-row-1">
+        <h2>{{ currentGame.title }}</h2>
+        <div><span class="details-label">Description: </span><br/><br/><span>{{ currentGame.description }}</span></div><hr>
+        <div><span class="details-label">Add date: </span><span>{{ currentGame.addDate | date:'mediumDate' }}</span>
+        </div><hr>
+        <div><span class="details-label">Release date:
+            </span><span>{{ currentGame.releaseDate | date:'mediumDate' }}</span></div><hr>
+        <div><span class="details-label">Price: </span><span>{{ currentGame.price | currency }}</span></div><hr>
+        <div><span class="details-label">Rating: </span><span id="rating" *ngFor="let star of stars"><i class="material-icons">stars</i></span></div><hr>
+        <div><span class="details-label">Category: </span><span>{{ currentGame.category.name }}</span></div><hr>
+        <div><span class="details-label">State: </span><span>{{ currentGame.state.name }}</span></div><hr>
+        <div><span class="details-label">Classification: </span><span>{{ currentGame.classification.name }}</span></div>
+        <div><span class="details-label">Developper: </span><span>{{ currentGame.idDevelopper.name }}</span></div>
+        <div><span class="details-label">Editor: </span><span>{{ currentGame.idEditor.name }}</span></div>
+        <hr>
+        <div><span class="details-label">Tags: </span><button class="tag"
+                *ngFor="let tag of currentGame.tagsCollection">{{ tag.title }}</button></div>
+        <hr>
+        <div><span class="details-label">Platforms: </span><button class="platform"
+                *ngFor="let plaform of currentGame.platformCollection">{{ plaform.name }}</button></div>
+        <hr>
+        <br/>
+        <button class="delete" routerLink="/user/game-delete/{{currentGame.id}}">Delete this game</button>
+        <button class="update" routerLink="/user/game-update/{{currentGame.id}}">Update this game</button>
+    </div>
 </div>

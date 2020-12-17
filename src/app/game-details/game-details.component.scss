@@ -1,0 +1,58 @@
+h2 {
+    margin-bottom: 5rem;
+}
+.details-label {
+    margin-right: 0.5em;
+    font-size: medium;
+    font-weight: 700;
+}
+.delete {
+    margin-top: 1rem;
+    padding: 1em;
+    background-color: #ff0000;
+    font-size: medium;
+    font-weight: 500;
+}
+.delete:hover {
+    background-color: #ad0000;
+}
+.update {
+    margin-top: 1rem;
+    padding: 1em;
+    background-color: #11a318;
+    font-size: medium;
+    font-weight: 500;
+}
+.update:hover {
+    background-color: #138619;
+}
+.tag {
+    margin: 0.5em;
+    padding: 0.5em;
+    background-color: #6750e6;
+    font-size: small;
+    font-weight: 700;
+}
+.tag:hover {
+    background-color: #513fb8;
+}
+.platform {
+    margin-top: 1rem;
+    padding: 0.5em;
+    background-color: #e09200;
+    font-size: small;
+    font-weight: 700;
+}
+.platform:hover {
+    background-color: #bd8111;
+}
+i {
+    margin-top: -0.2em;
+    vertical-align: middle;
+    margin-right: 0.2em;
+    color: yellow;
+}
+img {
+    width: 30vw;
+    height: 40vw;
+}

@@ -1,17 +1,17 @@
 <nav>
     <ul routerLinkActive="active">
         <li class="dropdown">
-            <a class="dropbtn" href="/user/game-platform" routerLink="game-platform">Platform<i class="material-icons">
+            <a class="dropbtn" routerLink="/user/games/platform">Platform<i class="material-icons">
                 keyboard_arrow_down
             </i></a>
             <div class="dropdown-content">
                 <div *ngFor="let platform of platforms">
-                    <a routerLink="/user/game-platform/{{platform.id}}">{{platform.name}}</a>
+                    <a routerLink="/user/games/platform/{{platform.id}}">{{platform.name}}</a>
                 </div>
             </div>
         </li>
         <li class="dropdown">
-            <a class="dropbtn" href="/user/games/category" routerLink="/user/games/category">Category<i class="material-icons">
+            <a class="dropbtn" routerLink="/user/games/category">Category<i class="material-icons">
                 keyboard_arrow_down
             </i></a>
             <div class="dropdown-content">
@@ -21,7 +21,7 @@
             </div>
         </li>
         <li class="dropdown">
-            <a class="dropbtn" href="/user/games/classification" routerLink="/user/">Classification<i class="material-icons">
+            <a class="dropbtn" routerLink="/user/">Classification<i class="material-icons">
                 keyboard_arrow_down
             </i></a>
             <div class="dropdown-content">
@@ -31,7 +31,7 @@
             </div>
         </li>
         <li class="dropdown">
-            <a class="dropbtn" href="/user/games/rating" routerLink="/user/game/rating">Rating<i class="material-icons">
+            <a class="dropbtn" routerLink="/user/games/rating">Rating<i class="material-icons">
                 keyboard_arrow_down
             </i></a>
             <div class="dropdown-content">
@@ -41,7 +41,7 @@
             </div>
         </li>
         <li class="dropdown">
-            <a class="dropbtn" href="/user/games/state" routerLink="/user/games/state">State<i class="material-icons">
+            <a class="dropbtn" routerLink="/user/games/state">State<i class="material-icons">
                 keyboard_arrow_down
             </i></a>
             <div class="dropdown-content">
@@ -51,7 +51,7 @@
             </div>
         </li>
         <li class="dropdown">
-            <a class="dropbtn" href="/user/games/developper" routerLink="/user/games/developper">Developper<i class="material-icons">
+            <a class="dropbtn" routerLink="/user/games/developper">Developper<i class="material-icons">
                 keyboard_arrow_down
             </i></a>
             <div class="dropdown-content">
@@ -61,7 +61,7 @@
             </div>
         </li>
         <li class="dropdown">
-            <a class="dropbtn" href="/user/games/editor" routerLink="/user/games/editor">Editor<i class="material-icons">
+            <a class="dropbtn" routerLink="/user/games/editor">Editor<i class="material-icons">
                 keyboard_arrow_down
             </i></a>
             <div class="dropdown-content">
@@ -71,7 +71,7 @@
             </div>
         </li>
         <li class="dropdown">
-            <a class="dropbtn" href="user/games/tag/" routerLink="user/games/tag/">Tags<i class="material-icons">
+            <a class="dropbtn" routerLink="user/games/tag/">Tags<i class="material-icons">
                 keyboard_arrow_down
             </i></a>
             <div class="dropdown-content">

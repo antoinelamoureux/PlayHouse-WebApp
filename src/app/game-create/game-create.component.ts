@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { GameService } from '../services/game.service';
 import { Game } from '../models/game';
 import { Router } from '@angular/router';
@@ -25,7 +25,8 @@ import { TagService } from '../services/tag.service';
 @Component({
   selector: 'app-game-create',
   templateUrl: './game-create.component.html',
-  styleUrls: ['./game-create.component.scss']
+  styleUrls: ['./game-create.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class GameCreateComponent implements OnInit {
   form: any = {};
