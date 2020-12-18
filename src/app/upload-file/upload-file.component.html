@@ -1,3 +1,8 @@
-<div>
-    <input class="file-input" type="file">
+<div class="ctn-upload">
+<input style="display: none" type="file" name="file" (change)="onFileSelect($event)" #hiddenfileinput>
+<button (click)="hiddenfileinput.click()" class="btn-upload"><i class="material-icons left">save_alt</i>Select File</button>
+<label for="file"><div *ngIf="selectedFile; else defaultFileName">{{selectedFile.name}}</div></label>
+<ng-template #defaultFileName>
+    Please choose a file.
+</ng-template>
 </div>

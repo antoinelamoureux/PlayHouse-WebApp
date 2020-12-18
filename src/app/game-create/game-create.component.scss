@@ -1,6 +1,8 @@
-.container {
-margin: auto;
-width: 100%;
+.ctn-create {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 form {
     margin: auto 5 0 0;
@@ -27,9 +29,10 @@ label {
 input {
     margin-bottom: 1em;
 }
-input[type="textarea"] {
+textarea {
     width: 100%;
     margin-top: 1em;
+    margin-bottom: 1em;
     border: none;
     background-color: transparent;
     border: 0.15rem solid rgb(44, 44, 44);

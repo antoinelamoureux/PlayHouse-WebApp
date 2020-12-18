@@ -16,8 +16,9 @@ import { UploadService } from '../services/upload.service';
 })
 export class UploadFileComponent implements ControlValueAccessor {
   @Input() progress;
-  onChange = (value:any) => {};
+  onChange = (value: any) => { };
   private file: File | null = null;
+  public selectedFile: File;
 
   @HostListener('change', ['$event.target.files']) emitFiles(event: FileList) {
     const file = event && event.item(0);
@@ -41,5 +42,8 @@ export class UploadFileComponent implements ControlValueAccessor {
   setDisabledState?(isDisabled: boolean): void {
     throw new Error("Method not implemented.");
   }
-
+  onFileSelect(event) {
+    this.selectedFile = event.target.files[0];
+    console.log(this.selectedFile.name);
+  }
 }

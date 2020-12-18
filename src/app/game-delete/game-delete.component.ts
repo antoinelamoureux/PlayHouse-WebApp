@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { Game } from '../models/game';
 import { ActivatedRoute } from '@angular/router';
 import { GameService } from '../services/game.service';
@@ -13,10 +13,11 @@ export class GameDeleteComponent implements OnInit {
   currentGame: Game;
 
   constructor(
-    private route: ActivatedRoute, 
+    private route: ActivatedRoute,
     private gameService: GameService,
-    private location: Location
-    ) { }
+    private location: Location,
+    private el: ElementRef
+  ) { }
 
   ngOnInit(): void {
     this.getGame();
@@ -34,5 +35,10 @@ export class GameDeleteComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  close() {
+    this.el.nativeElement.classList.remove('sshow')
+    this.el.nativeElement.classList.add('hhidden')
   }
 }

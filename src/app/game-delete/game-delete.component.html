@@ -1,4 +1,8 @@
+<app-modal>
 <h2>Delete the game</h2>
 <p>Delete the game {{currentGame.title}} ?</p>
-<button (click)="deleteGame(currentGame.id)">Yes</button>
-<button (click)="goBack()">No</button>
+<div class="btn-div">
+    <button id="btn-delete" (click)="deleteGame(currentGame.id)">Yes</button>
+    <button id="btn-cancel" (click)="goBack()">No</button>
+</div>
+</app-modal>

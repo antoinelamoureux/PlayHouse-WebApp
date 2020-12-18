@@ -12,11 +12,11 @@ export class GameDetailsComponent implements OnInit {
   currentGame: Game;
   currentNote: number;
   stars: number[] = [];
-  
-  constructor(private route: ActivatedRoute, 
-    private gameService: GameService) { 
-      this.currentGame = new Game();
-    }
+
+  constructor(private route: ActivatedRoute,
+    private gameService: GameService) {
+    this.currentGame = new Game();
+  }
 
   ngOnInit(): void {
     this.getGame();
@@ -27,7 +27,7 @@ export class GameDetailsComponent implements OnInit {
     this.gameService.getGame(id).subscribe(game => {
       if (game.cover !== null) {
         game.cover = `http://localhost:8080/api/files/${game.cover}`;
-        }
+      }
       this.currentGame = game;
       this.currentNote = parseInt(game.note.note, 10);
       this.parseNote();
@@ -52,6 +52,17 @@ export class GameDetailsComponent implements OnInit {
       default:
         this.stars.push(1);
     }
+  }
+
+  showDialog() {
+    let modal_t = document.getElementById('modal_1')
+    modal_t.classList.remove('hhidden')
+    modal_t.classList.add('sshow');
+  }
+  closeDialog() {
+    let modal_t = document.getElementById('modal_1')
+    modal_t.classList.remove('sshow')
+    modal_t.classList.add('hhidden');
   }
 }
 

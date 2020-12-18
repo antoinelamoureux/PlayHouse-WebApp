@@ -23,7 +23,8 @@
                 *ngFor="let plaform of currentGame.platformCollection">{{ plaform.name }}</button></div>
         <hr>
         <br/>
-        <button class="delete" routerLink="/user/game-delete/{{currentGame.id}}">Delete this game</button>
+        <button (click)="showDialog()" class="delete" routerLink="/user/game-delete/{{currentGame.id}}">Delete this game</button>
         <button class="update" routerLink="/user/game-update/{{currentGame.id}}">Update this game</button>
     </div>
 </div>
+<app-modal id="modal_1" class="hhidden"><app-game-delete></app-game-delete></app-modal>

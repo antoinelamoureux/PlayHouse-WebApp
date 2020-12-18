@@ -51,4 +51,105 @@ i {
             margin-right: 1em;
         }
     }
-}
+}  
+  .linkContainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  
+  /* siteNav-content-utilityLinks-account */
+  .links {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .name {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo:hover,
+  .name:hover,
+  .help:hover {
+    color: blue;
+  }
+  
+  /* siteNav-content-utilityLinks-dropdown */
+  .dropdownLinks-container {
+    display: none;
+  }
+  
+  .links:hover .dropdownLinks-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 25px;
+    right: 0px;
+    box-shadow: 0 3px 4px 0.08px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dropdownLinks-links {
+    position: relative;
+    background: rgb(37, 37, 37);
+    box-shadow: 0 3px 4px 0.08px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .dropdownLinks-links:after, 
+  .dropdownLinks-links:before {
+      bottom: 100%;
+      right: 15px;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+  }
+  
+  .dropdownLinks-links:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: rgb(37, 37, 37);
+    border-width: 5px;
+    right: 16px;
+    background-clip: padding-box;
+  }
+  
+  .dropdownLinks-links:before {
+    border-color: rgba(184, 184, 184, 0);
+    border-bottom-color: rgb(37, 37, 37);
+    border-width: 6px;
+    background-clip: padding-box;
+  }
+  
+  .dropdownLinks-links {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* siteNav-content-utilityLinks-dropdown-links-link */
+  .dropdownLinks-link {
+    text-decoration: none;
+    padding: 10px 30px;
+    font-size: medium;
+    font-weight: 500;
+    color: rgb(175, 175, 175);
+  }
+  
+  .dropdownLinks-link:hover {
+    font-size: medium;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+  }
+  
+  .dropdownLinks-link:first-child {
+    padding-top: 15px;
+  }
+  
+  .dropdownLinks-link:last-child {
+    padding-bottom: 15px;
+  }
+  

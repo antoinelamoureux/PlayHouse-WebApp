@@ -1,10 +1,10 @@
-<div class="container">
+<div class="ctn-create">
 <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
     <h2>Add a game</h2>
     <p>Title :</p>
     <p><input type="text" [(ngModel)]="currentGame.title" name="title" /></p>
     <p>Description :</p>
-    <p><input type="textarea" cols="10" rows="5" [(ngModel)]="currentGame.description" name="description" placeholder="Enter a decritpion for the game here."/></p>
+    <p><textarea cols="65" rows="5" [(ngModel)]="currentGame.description" name="description" placeholder="Enter a decritpion for the game here."></textarea></p>
     <p>Cover :</p>
     <app-upload-file></app-upload-file>
     <p>Add Date :</p>
