@@ -1,4 +1,4 @@
-<div class="gradient">
+<div class="ctn-main">
   <nav class="navigation">
     <div class="nav-header"><i class="material-icons">
         extension
@@ -18,7 +18,7 @@
         <a href="/user" routerLink="user">Add a game</a>
       </li>
       <li *ngIf="isLoggedIn">
-        <i class="material-icons">shopping_cart</i><a href="/user" routerLink="user">Shopping list</a>
+        <i id="cart" class="material-icons">shopping_cart</i><a href="/user" routerLink="user">Shopping List</a>
       </li>
     </ul>
     <ul class="nav-item" *ngIf="!isLoggedIn">
@@ -31,9 +31,10 @@
     </ul>
     <ul class="nav-item" *ngIf="isLoggedIn">
       <li>
+        <a class="profile" href="/profile"></a>
         <div class="linkContainer">
           <div class="links siteNav-content-utilityLinks-account">
-            <div class="profile name siteNav-content-utilityLinks-link"><a href="/profile"></a><a class="nav-item" href="/user" routerLink="user">{{ username | titlecase }}</a></div>
+            <div class="profile name siteNav-content-utilityLinks-link"><a class="nav-item" href="/user" routerLink="user">{{ username | titlecase }}</a></div>
             <div class="dropdownLinks-container">
               <div class="dropdownLinks-links siteNav-content-utilityLinks-dropdown-links">
                 <a class="dropdownLinks-link siteNav-content-utilityLinks-dropdown-links-link" href="#">Profile</a>
@@ -49,5 +50,6 @@
       <li><a href (click)="logout()">Sign Out</a></li>
     </ul>
   </nav>
-  <router-outlet></router-outlet>
+  <router-outlet class="ctn-main"></router-outlet>
+  <app-footer></app-footer>
 </div>

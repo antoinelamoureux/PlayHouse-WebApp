@@ -1,5 +1,25 @@
+html {
+    min-height: 100%;
+}
+.ctn-main {
+    min-height: 100vh;
+}
+:host {
+    min-height: 100%;
+}
 #register {
     margin-top: 1rem;
     text-align: center;
     font-size: 11pt;
+}
+.modal {
+    padding: 2rem 0 2rem 0;
+    text-align: center;
+}
+#btn-confirm {
+    margin-top: 3rem;
+    padding: 0.7em 1em 0.7em 1em;
+    background-color: #585acf;
+    font-size: medium;
+    font-weight: 500;
 }

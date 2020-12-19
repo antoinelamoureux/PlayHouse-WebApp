@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
+import { IgdbService } from '../services/igdb.service';
 
 @Component({
   selector: 'app-home',
@@ -11,8 +12,10 @@ export class HomeComponent implements OnInit {
 
   content: any;
 
-  constructor(private userService: UserService, 
-    private router: Router) { }
+  constructor(
+    private userService: UserService, 
+    private router: Router,
+    private igdbService: IgdbService) { }
 
   ngOnInit(): void {
     /*
@@ -29,6 +32,11 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/user']);
   }, 1000);
   */
+ this.getToken();
+  }
+
+  getToken() {
+    this.igdbService.postCredentials().subscribe();
   }
 
 }

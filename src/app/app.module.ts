@@ -36,6 +36,7 @@ import { GameEditorComponent } from './game-editor/game-editor.component';
 import { GameClassificationComponent } from './game-classification/game-classification.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ModalComponent } from './modal/modal.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { ModalComponent } from './modal/modal.component';
     GameEditorComponent,
     GameClassificationComponent,
     MessagesComponent,
-    ModalComponent
+    ModalComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

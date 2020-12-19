@@ -1,11 +1,20 @@
+html * {
+  margin: 0;
+}
+html, body{
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(255, 255, 255);
+  background-color: rgb(31, 38, 46);
+}
 .navigation {
     position: relative;
-    padding-top: 1rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.3rem;
     display: flex;
     flex: row nowrap;
     justify-content: space-between;
-    background-color: rgb(56, 56, 56);
+    background-color: rgb(32, 32, 36);
+    border-bottom: 1.5px solid rgb(0, 0, 0);
     font-size: 1rem;
     font-weight: 400;
     color: rgb(148, 148, 148);
@@ -16,24 +25,32 @@
 .nav-header {
     justify-self: start;
     flex: none;
-    font-size: large;
-    font-weight: 500;
+    font-size: x-large;
+    font-weight: 700;
     color: white;
     padding: 10px;
-    background-color: rgb(56, 56, 56);
+    background-color: transparent;
     align-self: center;
 }
 i {
     margin-left: 1rem;
     margin-right: 0.7rem;
     vertical-align: middle;
-    color: rgb(130, 130, 201);
+    color: rgb(111, 0, 255);
+}
+#cart {
+    margin-left: 1rem;
+    margin-right: 0.7rem;
+    vertical-align: middle;
+    color: rgb(202, 202, 202);
 }
 .nav-item {
-    background-color: rgb(56, 56, 56);
+    background-color: transparent;
     padding: 10px;
     display: flex;
     flex: row nowrap;
+    font-size: medium;
+    font-weight: 600;
     justify-content: space-between;
     text-decoration: none;
     align-self: center;
@@ -43,19 +60,18 @@ i {
         display: flex;
         flex: row nowrap;
         align-items: center;
-        .profile {
-            width: 2vw;
-            height: 2vw;
-            border-radius: 5rem;
-            background-color: rgb(105, 105, 105);
-            margin-right: 1em;
-        }
     }
-}  
+} 
+.profile {
+  justify-content: space-between;
+  width: 2vw;
+  height: 2vw;
+  border-radius: 5rem;
+  background-color: rgb(111, 0, 255);
+} 
   .linkContainer {
     display: flex;
-    justify-content: flex-end;
-    width: 100%;
+    justify-content: center;
   }
   
   /* siteNav-content-utilityLinks-account */
@@ -94,8 +110,8 @@ i {
   
   .dropdownLinks-links {
     position: relative;
-    background: rgb(37, 37, 37);
-    box-shadow: 0 3px 4px 0.08px rgba(0, 0, 0, 0.2); 
+    background: #1a1a1a;
+    box-shadow: 0 5px 5px 0.08px rgba(0, 0, 0, 0.5); 
   }
   
   .dropdownLinks-links:after, 

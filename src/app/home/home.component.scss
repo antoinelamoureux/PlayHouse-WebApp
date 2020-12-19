@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+  }
+  html {
+    min-height: 100vh;
+  }
+  :host {
+    min-height: 100vh;
+  }
+.ctn-main {
+    min-height: 100vh;
+  }
