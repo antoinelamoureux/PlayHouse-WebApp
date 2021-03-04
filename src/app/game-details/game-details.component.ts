@@ -26,7 +26,7 @@ export class GameDetailsComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.gameService.getGame(id).subscribe(game => {
       if (game.cover !== null) {
-        game.cover = `http://localhost:8080/api/files/${game.cover}`;
+        game.cover = `http://playhouse-uploads.s3-website-us-west-2.amazonaws.com/${game.cover}`;
       }
       this.currentGame = game;
       this.currentNote = parseInt(game.note.note, 10);

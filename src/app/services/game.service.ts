@@ -10,7 +10,7 @@ import { MessageService } from './message.service';
   providedIn: 'root'
 })
 export class GameService {
-  url: string = 'http://localhost:8080/api/games';
+  url: string = 'http://playhouse-api-aws-dev.us-west-2.elasticbeanstalk.com/api/games';
   games: Game[];
 
   constructor(

@@ -50,7 +50,8 @@ export class GamesComponent implements OnInit {
       .pipe(map(games => {
         games.map(game => {
           if (game.cover !== null) {
-            game.cover = `http://localhost:8080/api/files/${game.cover}`;
+            //game.cover = `http://playhouse-api-aws-dev.us-west-2.elasticbeanstalk.com/api/files/${game.cover}`;
+            game.cover = `http://playhouse-uploads.s3-website-us-west-2.amazonaws.com/${game.cover}`;
           }
         })
         return games;
@@ -80,7 +81,7 @@ export class GamesComponent implements OnInit {
           .pipe(map(games => {
             games.map(game => {
               if (game.cover !== null) {
-                game.cover = `http://localhost:8080/api/files/${game.cover}`;
+                game.cover = `http://playhouse-uploads.s3-website-us-west-2.amazonaws.com/${game.cover}`;
               }
             })
             this.gamesCount = games.length;
@@ -100,7 +101,7 @@ export class GamesComponent implements OnInit {
           .pipe(map(games => {
             games.map(game => {
               if (game.cover !== null) {
-                game.cover = `http://localhost:8080/api/files/${game.cover}`;
+                game.cover = `http://playhouse-uploads.s3-website-us-west-2.amazonaws.com/${game.cover}`;
               }
             })
             this.gamesCount = games.length;
@@ -118,7 +119,7 @@ export class GamesComponent implements OnInit {
           .pipe(map(games => {
             games.map(game => {
               if (game.cover !== null) {
-                game.cover = `http://localhost:8080/api/files/${game.cover}`;
+                game.cover = `http://playhouse-uploads.s3-website-us-west-2.amazonaws.com/${game.cover}`;
               }
             });
             this.gamesCount = games.length;
@@ -136,7 +137,7 @@ export class GamesComponent implements OnInit {
           .pipe(map(games => {
             games.map(game => {
               if (game.cover !== null) {
-                game.cover = `http://localhost:8080/api/files/${game.cover}`;
+                game.cover = `http://playhouse-uploads.s3-website-us-west-2.amazonaws.com/${game.cover}`;
               }
             })
             this.gamesCount = games.length;
@@ -154,7 +155,7 @@ export class GamesComponent implements OnInit {
           .pipe(map(games => {
             games.map(game => {
               if (game.cover !== null) {
-                game.cover = `http://localhost:8080/api/files/${game.cover}`;
+                game.cover = `http://playhouse-uploads.s3-website-us-west-2.amazonaws.com/${game.cover}`;
               }
             })
             this.gamesCount = games.length;
@@ -172,7 +173,7 @@ export class GamesComponent implements OnInit {
           .pipe(map(games => {
             games.map(game => {
               if (game.cover !== null) {
-                game.cover = `http://localhost:8080/api/files/${game.cover}`;
+                game.cover = `http://playhouse-uploads.s3-website-us-west-2.amazonaws.com/${game.cover}`;
               }
             })
             this.gamesCount = games.length;
@@ -190,7 +191,7 @@ export class GamesComponent implements OnInit {
           .pipe(map(games => {
             games.map(game => {
               if (game.cover !== null) {
-                game.cover = `http://localhost:8080/api/files/${game.cover}`;
+                game.cover = `http://playhouse-uploads.s3-website-us-west-2.amazonaws.com/${game.cover}`;
               }
             })
             this.gamesCount = games.length;
@@ -205,7 +206,7 @@ export class GamesComponent implements OnInit {
           .pipe(map(games => {
             games.map(game => {
               if (game.cover !== null) {
-                game.cover = `http://localhost:8080/api/files/${game.cover}`;
+                game.cover = `http://playhouse-uploads.s3-website-us-west-2.amazonaws.com/${game.cover}`;
               }
             })
             this.gamesCount = games.length;

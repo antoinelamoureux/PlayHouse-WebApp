@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UploadService {
-  url: string = 'http://localhost:8080/api';
+  url: string = 'http://playhouse-api-aws-dev.us-west-2.elasticbeanstalk.com/api';
   currentFile: File;
 
   constructor(private http: HttpClient) { }

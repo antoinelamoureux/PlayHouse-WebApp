@@ -31,7 +31,7 @@ export class GameCategoryComponent implements OnInit {
     this.gameService.findGamesByCategoryId(id).subscribe(games => { 
       games.map(game => {
         if (game.cover !== null) {
-        game.cover = `http://localhost:8080/api/files/${game.cover}`
+        game.cover = `http://playhouse-uploads.s3-website-us-west-2.amazonaws.com/${game.cover}`
         }
       });
       this.currentCategory.games = games 

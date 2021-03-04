@@ -7,7 +7,7 @@ import { Editor } from '../models/editor';
   providedIn: 'root'
 })
 export class EditorService {
-  url: string = 'http://localhost:8080/api/editor';
+  url: string = 'http://playhouse-api-aws-dev.us-west-2.elasticbeanstalk.com/api/editor';
 
   constructor(private http: HttpClient) { }
 

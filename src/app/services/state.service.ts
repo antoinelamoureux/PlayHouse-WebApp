@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class StateService {
-  url: string = 'http://localhost:8080/api/state';
+  url: string = 'http://playhouse-api-aws-dev.us-west-2.elasticbeanstalk.com/api/state';
 
   constructor(private http: HttpClient) { }
 

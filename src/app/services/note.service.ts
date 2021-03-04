@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class NoteService {
-  url: string = 'http://localhost:8080/api/note';
+  url: string = 'http://playhouse-api-aws-dev.us-west-2.elasticbeanstalk.com/api/note';
   notes: Note[];
 
   constructor(private http: HttpClient) { }

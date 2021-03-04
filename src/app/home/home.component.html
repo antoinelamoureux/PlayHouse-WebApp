@@ -1,5 +1,29 @@
-<div class="ctn-main">
-<app-login></app-login>
+<div *ngIf="isLoading" 
+   style="display: flex; justify-content: center; align-items: center; background-color: rgba(0,0,0,0.5); z-index: 99; height: 100vh;">
+  <mat-progress-spinner 
+    color="primary" 
+    mode="indeterminate">
+</mat-progress-spinner>
 </div>
-
-
+<div class="ctn-main">
+    <!--<app-login></app-login>-->
+    <div class="grid-games">
+        <div class="col-2-row-1 header">
+            <h2>Lastest games on PS5</h2>
+                <p>Welcome to PlayHouse</p>
+        </div>
+        <div class="col-5-row-1">
+            <button class="add" routerLink="/login">Sign in</button>
+        </div>
+        <div *ngFor="let game of igdbGames; let i = index">
+            <div class=thumbs><img
+                    src="https://images.igdb.com/igdb/image/upload/t_screenshot_med_2x/{{game.cover.image_id}}.jpg">
+            </div>
+            <div class="game-title">{{ game.name }}</div>
+            <div>
+                <p class="summary"><strong>Summary : </strong></p>
+                <p class="summary">{{ game.summary }}</p>
+            </div>
+        </div>
+    </div>
+</div>

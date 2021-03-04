@@ -25,6 +25,11 @@ export class UploadFileComponent implements ControlValueAccessor {
     this.onChange(file);
     this.file = file;
     this.uploadService.setFile(this.file);
+    this.uploadService.uploadFile(this.uploadService.getFile()).subscribe(response => {
+      console.log(response);
+    }, error => {
+      console.log(error);
+    });
   }
 
   constructor(private host: ElementRef<HTMLInputElement>, private uploadService: UploadService) { }

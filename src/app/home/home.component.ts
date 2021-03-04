@@ -9,7 +9,8 @@ import { IgdbService } from '../services/igdb.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  igdbGames: any;
+  isLoading = true;
   content: any;
 
   constructor(
@@ -36,7 +37,12 @@ export class HomeComponent implements OnInit {
   }
 
   getToken() {
-    this.igdbService.postCredentials().subscribe();
+    this.igdbService.getIdgbGames().subscribe(data => {
+      this.isLoading = false;
+      this.igdbGames= data;
+    });
+
+    console.log(this.igdbGames);
   }
 
 }

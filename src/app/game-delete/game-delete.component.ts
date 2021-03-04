@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Game } from '../models/game';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GameService } from '../services/game.service';
 import { Location } from '@angular/common';
 
@@ -16,6 +16,7 @@ export class GameDeleteComponent implements OnInit {
     private route: ActivatedRoute,
     private gameService: GameService,
     private location: Location,
+    private router: Router,
     private el: ElementRef
   ) { }
 
@@ -30,7 +31,7 @@ export class GameDeleteComponent implements OnInit {
 
   deleteGame(id: number) {
     this.gameService.deleteGame(this.currentGame.id).subscribe();
-    this.location.back();
+    this.router.navigate(['/user']);
   }
 
   goBack(): void {

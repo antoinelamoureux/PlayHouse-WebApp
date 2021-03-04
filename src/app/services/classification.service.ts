@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ClassificationService {
-  url: string = 'http://localhost:8080/api/classification';
+  url: string = 'http://playhouse-api-aws-dev.us-west-2.elasticbeanstalk.com/api/classification';
 
   constructor(private http: HttpClient) { }
 

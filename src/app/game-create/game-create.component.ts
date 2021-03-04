@@ -185,14 +185,10 @@ export class GameCreateComponent implements OnInit {
     }, error => {
       console.log(error);
     });
-
-    this.currentGame.cover = this.uploadService.getFile().name;
-    this.uploadService.uploadFile(this.uploadService.getFile()).subscribe(response => {
-      console.log(response);
-    }, error => {
-      console.log(error);
-    });
     
+    console.log('*********** CURRENT GAME ***************');
+    console.log(this.currentGame);
+
     this.games.push(this.currentGame);
     console.log(this.games);
 
@@ -208,7 +204,8 @@ export class GameCreateComponent implements OnInit {
     });
     
     const navigate = () => this.router.navigate(['/user']);
-    setTimeout(navigate, 5000);
+    navigate();
+    //setTimeout(navigate, 5000);
   }
 
   setCurrentGame() {
@@ -220,6 +217,15 @@ export class GameCreateComponent implements OnInit {
     this.currentGame.idEditor = this.currentEditor;
     this.currentGame.platformCollection = this.currentPlatforms;
     this.currentGame.tagsCollection = this.currentTags;
+    this.currentGame.cover = this.uploadService.getFile().name;
+    this.uploadService.currentFile = null;
+    /*
+    this.uploadService.uploadFile(this.uploadService.getFile()).subscribe(response => {
+      console.log(response);
+    }, error => {
+      console.log(error);
+    });
+    */
   }
 
 }

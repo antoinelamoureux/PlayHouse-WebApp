@@ -3,7 +3,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
-const AUTH_API = 'http://localhost:8080/api/auth/';
+const AUTH_API = 'http://playhouse-api-aws-dev.us-west-2.elasticbeanstalk.com/api/auth/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })

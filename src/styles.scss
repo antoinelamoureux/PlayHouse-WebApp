@@ -217,3 +217,5 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     transition: background-color 5000s;
     -webkit-text-fill-color: #fff !important;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

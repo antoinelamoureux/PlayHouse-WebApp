@@ -7,7 +7,7 @@ import { Tag } from '../models/tag';
   providedIn: 'root'
 })
 export class TagService {
-  url: string = 'http://localhost:8080/api/tags';
+  url: string = 'http://playhouse-api-aws-dev.us-west-2.elasticbeanstalk.com/api/tags';
 
   constructor(private http: HttpClient) { }
 

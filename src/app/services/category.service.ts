@@ -8,7 +8,7 @@ import { Game } from '../models/game';
   providedIn: 'root'
 })
 export class CategoryService {
-  url: string = 'http://localhost:8080/api/category';
+  url: string = 'http://playhouse-api-aws-dev.us-west-2.elasticbeanstalk.com/api/category';
 
   constructor(private http: HttpClient) { }
 

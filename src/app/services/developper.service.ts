@@ -8,7 +8,7 @@ import { Classification } from '../models/classification';
   providedIn: 'root'
 })
 export class DevelopperService {
-  url: string = 'http://localhost:8080/api/developper';
+  url: string = 'http://playhouse-api-aws-dev.us-west-2.elasticbeanstalk.com/api/developper';
 
   constructor(private http: HttpClient) { }
 

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PlatformService {
-  url: string = 'http://localhost:8080/api/platform';
+  url: string = 'http://playhouse-api-aws-dev.us-west-2.elasticbeanstalk.com/api/platform';
   platforms: Platform[];
 
   constructor(private http: HttpClient) { }
